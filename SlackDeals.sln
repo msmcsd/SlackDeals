@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SlackDeals", "SlackDeals\Sl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SlackDeals.Core", "SlackDeals.Core\SlackDeals.Core.csproj", "{156E767F-D6E7-4A4A-A6F4-0C2473AE08A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoDBConnectionTest", "MongoDBConnectionTest\MongoDBConnectionTest.csproj", "{3809DF7C-DA64-434B-A60B-653A4104B33B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MongoDBConnectionTest", "MongoDBConnectionTest\MongoDBConnectionTest.csproj", "{3809DF7C-DA64-434B-A60B-653A4104B33B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{751C4AF6-82AF-4191-AB1F-79876CB4326D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -40,5 +40,8 @@ namespace SlackDeals.Core
 
         [BsonElement("founder_image_url")]
         public string DealFounderImageUrl { get; set; }
+
+        [BsonElement("type")]
+        public string Type { get; set; }
     }
 }
