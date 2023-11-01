@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Frame xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SlackDeals.Controls.DealCard"
+             Padding="10"
+             WidthRequest="230"
+             HeightRequest="430"
+             CornerRadius="10">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+    
+        <!--Found By-->
+        <HorizontalStackLayout Grid.Row="0">
+            <Frame Padding="0" WidthRequest="25" HeightRequest="25" CornerRadius="16">
+                <Image Source="https://slickdeals.net/attachment/avatar/3/8/9/0/8/6/150x150/avatar.normal?dateline=1681157824" WidthRequest="25" HeightRequest="25"/>
+            </Frame>
+            <VerticalStackLayout Padding="5,0,0,0">
+                <HorizontalStackLayout>
+                    <Label Text="found by" FontSize="11" TextColor="Gray"/>
+                    <Label Text="founder" FontSize="11" Padding="5,0,0,0"/>
+                </HorizontalStackLayout>
+                <Label Text="about 2 hours ago" FontSize="10" TextColor="Gray"/>
+            </VerticalStackLayout>
+        </HorizontalStackLayout>
+
+        <!--Deal Image-->
+        <Image Grid.Row="1" 
+               Margin="5"
+               BackgroundColor="LightGray"
+               Source="https://static.slickdealscdn.com/attachment/1/2/4/4/2/8/7/200x200/14455375.thumb" 
+               WidthRequest="200"
+               HeightRequest="200"
+               Aspect="AspectFill"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="CenterAndExpand"/>
+
+        <!--Desl Description-->
+        <Label Grid.Row="2" Text="Select Costco Locations: GE Profile 4.8 cu. ft. All-in-One Washer Dryer" LineBreakMode="WordWrap"/>
+
+        <!--Deal Price-->
+        <HorizontalStackLayout Grid.Row="3" Margin="0,10,0,0">
+            <Label Text="$2000" FontSize="18" FontAttributes="Bold"/>
+            <Label Text="$2600" 
+                   Padding="5" 
+                   VerticalOptions="EndAndExpand"
+                   VerticalTextAlignment="End"
+                   TextColor="Red" 
+                   TextDecorations="Strikethrough" />
+        </HorizontalStackLayout>
+
+        <!--Delivery Charge-->
+        <Label Grid.Row="4" 
+               Text="+ Free Delivery" 
+               FontSize="12"
+               TextColor="Gray"/>
+
+        <!--Merchant-->
+        <Label Grid.Row="5" 
+               Text="Costco Wholesale" 
+               FontSize="12"
+               TextColor="Gray"/>
+
+        <!--Divider-->
+        <Label Grid.Row="6" 
+               HeightRequest="1" 
+               Margin="0,10,0,0"
+               BackgroundColor="LightGray"/>
+
+        <!--Like and Comment-->
+        <Grid Grid.Row="7" ColumnDefinitions="*,*" Padding="0,10,0,0">
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Image Source="like.png" WidthRequest="20"/>
+                <Label Text="15" Padding="3,0,0,0" VerticalTextAlignment="Center"/>
+            </HorizontalStackLayout >
+            <HorizontalStackLayout Grid.Column="1" HorizontalOptions="Center">
+                <Image Source="comment.png" WidthRequest="20"/>
+                <Label Text="16" Padding="3,0,0,0" VerticalTextAlignment="Center" VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+        </Grid>
+    </Grid>
+</Frame>
