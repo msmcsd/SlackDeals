@@ -10,7 +10,7 @@
     <ScrollView>
         <VerticalStackLayout>
             <Label Text="Top Picks" FontSize="15" FontAttributes="Bold" Margin="10,30,0,0"/>
-            <Grid>
+            <Grid RowDefinitions="300">
                 <CollectionView ItemsSource="{Binding Deals}" ItemsLayout="HorizontalList">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>

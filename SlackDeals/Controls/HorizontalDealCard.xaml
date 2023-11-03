@@ -4,7 +4,7 @@
        xmlns:m="clr-namespace:SlackDeals.Core;assembly=SlackDeals.Core"
        x:DataType="m:Deal"
        x:Class="SlackDeals.Controls.HorizontalDealCard"
-       Padding="0,5,0,0">
+       Padding="0,5,0,5">
 
     <Grid ColumnDefinitions="Auto, *" Padding="0,5,0,2">
         <!--Deal Image-->
@@ -18,19 +18,19 @@
                    HorizontalOptions="CenterAndExpand"
                    VerticalOptions="Center"/>
         </Frame>
-        <Grid Grid.Column="1" RowDefinitions="Auto,*,*,*">
+        <Grid Grid.Column="1" RowDefinitions="Auto,Auto,Auto,Auto">
             <Label Text="{Binding Description}" FontSize="10" FontAttributes="Bold" MaxLines="3" LineBreakMode="WordWrap"/>
 
             <!--Deal Price-->
             <HorizontalStackLayout Grid.Row="1" Padding="0,5,0,0">
                 <Label Text="{Binding CurrentPrice, StringFormat='${0}'}" 
                        VerticalTextAlignment="End"
-                       FontSize="12" 
+                       FontSize="13" 
                        FontAttributes="Bold"/>
                 <Label Text="{Binding OriginalPrice, StringFormat='${0}'}" 
-                       Padding="5,0,0,0" 
+                       Padding="8,0,0,0" 
                        FontSize="10"
-                       VerticalOptions="EndAndExpand"
+                       VerticalOptions="End"
                        VerticalTextAlignment="End"
                        TextColor="Red" 
                        TextDecorations="Strikethrough" />
@@ -38,13 +38,12 @@
 
             <!--Shippg-->
             <Label Grid.Row="2" 
-                   Padding="0,5,0,0"
-               Text="{Binding Condition}" 
-               FontSize="9"
-               TextColor="Gray"/>
+                   Text="{Binding Condition}" 
+                   FontSize="9"
+                   TextColor="Gray"/>
 
             <!--Like and Comment-->
-            <Grid Grid.Row="3" ColumnDefinitions="*,*,*" Padding="0,10,0,0">
+            <Grid Grid.Row="3" ColumnDefinitions="*,*,*" Padding="0,5,0,0">
                 <HorizontalStackLayout HorizontalOptions="Start">
                     <Image Source="like.png" WidthRequest="15"/>
                     <Label Text="{Binding Likes}" FontSize="10" Padding="3,0,0,0" VerticalTextAlignment="Center"/>
