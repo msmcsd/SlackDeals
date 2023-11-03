@@ -15,7 +15,7 @@
                             ItemsLayout="HorizontalList">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <controls:DealCard x:DataType="m:Deal" Margin="10"/>
+                        <controls:VerticalDealCard x:DataType="m:Deal" Margin="10"/>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
