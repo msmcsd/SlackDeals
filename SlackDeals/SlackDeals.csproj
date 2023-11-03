@@ -66,6 +66,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Controls\HorizontalDealCard.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Controls\VerticalDealCard.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

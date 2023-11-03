@@ -5,7 +5,7 @@
              x:Class="SlackDeals.Controls.VerticalDealCard"
              x:DataType="m:Deal"
              Padding="10"
-             WidthRequest="230"
+             WidthRequest="{OnPlatform 230, Android=180}"
              CornerRadius="10">
     <Grid>
         <Grid.RowDefinitions>
@@ -20,7 +20,7 @@
         </Grid.RowDefinitions>
     
         <!--Found By-->
-        <HorizontalStackLayout Grid.Row="0">
+        <HorizontalStackLayout Grid.Row="0" IsVisible="{OnPlatform True, Android=False}">
             <Frame Padding="0" WidthRequest="25" HeightRequest="25" CornerRadius="16">
                 <Image Source="{Binding DealFounderImageUrl}" WidthRequest="25" HeightRequest="25"/>
             </Frame>
@@ -36,16 +36,21 @@
         <!--Deal Image-->
         <Image Grid.Row="1" 
                Margin="5"
-               BackgroundColor="LightGray"
+               BackgroundColor="#EEEEEE"
                Source="{Binding DealImageUrl}" 
-               WidthRequest="200"
-               HeightRequest="200"
+               WidthRequest="{OnPlatform 200, Android=180}"
+               HeightRequest="{OnPlatform 200, Android=120}"
                Aspect="AspectFill"
                HorizontalOptions="CenterAndExpand"
                VerticalOptions="CenterAndExpand"/>
 
         <!--Desl Description-->
-        <Label Grid.Row="2" Text="{Binding Description}" MaxLines="3" LineBreakMode="WordWrap"/>
+        <Label Grid.Row="2" 
+               Text="{Binding Description}" 
+               FontSize="{OnPlatform 12, Android=10}"
+               FontAttributes="Bold"
+               MaxLines="{OnPlatform 3, Android=2}" 
+               LineBreakMode="WordWrap"/>
 
         <!--Deal Price-->
         <HorizontalStackLayout Grid.Row="3" Margin="0,10,0,0">

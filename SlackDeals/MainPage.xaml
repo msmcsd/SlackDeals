@@ -6,47 +6,56 @@
              xmlns:m="clr-namespace:SlackDeals.Core;assembly=SlackDeals.Core"
              x:DataType="vm:MainPageViewModel"
              x:Class="SlackDeals.MainPage"
-             BackgroundColor="LightGray">
+             BackgroundColor="#EEEEEE">
+    <ScrollView>
+        <VerticalStackLayout>
+            <Label Text="Top Picks" FontSize="15" FontAttributes="Bold" Margin="10,30,0,0"/>
+            <Grid>
+                <CollectionView ItemsSource="{Binding Deals}" ItemsLayout="HorizontalList">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <controls:VerticalDealCard x:DataType="m:Deal" Margin="5"/>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                <Frame IsVisible="{OnPlatform True, Android=False}"
+                       Padding="0" 
+                       WidthRequest="50" 
+                       HeightRequest="50"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center"
+                       CornerRadius="25">
+                    <Button Text="&lt;"
+                            FontSize="20"
+                            FontAttributes="Bold"
+                            TextColor="Black"
+                            BackgroundColor="White"/>
+                </Frame>
+                <Frame IsVisible="{OnPlatform True, Android=False}"
+                       Padding="0" 
+                       WidthRequest="50" 
+                       HeightRequest="50"
+                       HorizontalOptions="End"
+                       VerticalOptions="Center"
+                       CornerRadius="25">
+                    <Button Text=">"
+                            FontSize="20"
+                            FontAttributes="Bold"
+                            TextColor="Black"
+                            BackgroundColor="White"/>
+                </Frame>
+            </Grid>
 
-    <VerticalStackLayout>
-        <!--<ScrollView Orientation="Horizontal">-->
-        <Grid>
-            <CollectionView ItemsSource="{Binding Deals}"
-                            ItemsLayout="HorizontalList">
+            <Label Text="Latest Deals" FontSize="15" FontAttributes="Bold" Margin="10,30,0,0"/>
+
+            <CollectionView ItemsSource="{Binding Deals}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <controls:VerticalDealCard x:DataType="m:Deal" Margin="10"/>
+                        <controls:HorizontalDealCard Margin="0,10,0,0" Padding="0"/>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-            <Frame IsVisible="{OnPlatform True, Android=False}"
-                   Padding="0" 
-                   WidthRequest="50" 
-                   HeightRequest="50"
-                   HorizontalOptions="Start"
-                   VerticalOptions="Center"
-                   CornerRadius="25">
-            <Button Text="&lt;"
-                    FontSize="20"
-                    FontAttributes="Bold"
-                    TextColor="Black"
-                    BackgroundColor="White"/>
-            </Frame>
-            <Frame IsVisible="{OnPlatform True, Android=False}"
-                   Padding="0" 
-                   WidthRequest="50" 
-                   HeightRequest="50"
-                   HorizontalOptions="End"
-                   VerticalOptions="Center"
-                   CornerRadius="25">
-            <Button Text=">"
-                    FontSize="20"
-                    FontAttributes="Bold"
-                    TextColor="Black"
-                    BackgroundColor="White"/>
-            </Frame>
-        </Grid>
-        <!--</ScrollView>-->
-    </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
 
 </ContentPage>

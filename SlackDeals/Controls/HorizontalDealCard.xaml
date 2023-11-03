@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Frame xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:m="clr-namespace:SlackDeals.Core;assembly=SlackDeals.Core"
+       x:DataType="m:Deal"
+       x:Class="SlackDeals.Controls.HorizontalDealCard"
+       Padding="0,5,0,0">
+
+    <Grid ColumnDefinitions="Auto, *" Padding="0,5,0,2">
+        <!--Deal Image-->
+        <Frame Margin="5,0,5,0" CornerRadius="5" WidthRequest="100" HeightRequest="100" VerticalOptions="Start">
+            <Image Grid.Row="1" 
+                   BackgroundColor="#EEEEEE"
+                   Source="{Binding DealImageUrl}" 
+                   WidthRequest="100"
+                   HeightRequest="100"
+                   Aspect="AspectFill"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="Center"/>
+        </Frame>
+        <Grid Grid.Column="1" RowDefinitions="Auto,*,*,*">
+            <Label Text="{Binding Description}" FontSize="10" FontAttributes="Bold" MaxLines="3" LineBreakMode="WordWrap"/>
+
+            <!--Deal Price-->
+            <HorizontalStackLayout Grid.Row="1" Padding="0,5,0,0">
+                <Label Text="{Binding CurrentPrice, StringFormat='${0}'}" 
+                       VerticalTextAlignment="End"
+                       FontSize="12" 
+                       FontAttributes="Bold"/>
+                <Label Text="{Binding OriginalPrice, StringFormat='${0}'}" 
+                       Padding="5,0,0,0" 
+                       FontSize="10"
+                       VerticalOptions="EndAndExpand"
+                       VerticalTextAlignment="End"
+                       TextColor="Red" 
+                       TextDecorations="Strikethrough" />
+            </HorizontalStackLayout>
+
+            <!--Shippg-->
+            <Label Grid.Row="2" 
+                   Padding="0,5,0,0"
+               Text="{Binding Condition}" 
+               FontSize="9"
+               TextColor="Gray"/>
+
+            <!--Like and Comment-->
+            <Grid Grid.Row="3" ColumnDefinitions="*,*,*" Padding="0,10,0,0">
+                <HorizontalStackLayout HorizontalOptions="Start">
+                    <Image Source="like.png" WidthRequest="15"/>
+                    <Label Text="{Binding Likes}" FontSize="10" Padding="3,0,0,0" VerticalTextAlignment="Center"/>
+                </HorizontalStackLayout >
+                <HorizontalStackLayout Grid.Column="1" HorizontalOptions="Start">
+                    <Image Source="comment.png" WidthRequest="15"/>
+                    <Label Text="{Binding Comments}" FontSize="10" Padding="3,0,0,0" VerticalTextAlignment="Center" VerticalOptions="Center"/>
+                </HorizontalStackLayout>
+            </Grid>
+        </Grid>
+    </Grid>
+</Frame>
