@@ -49,7 +49,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\SlackDeals.Core\SlackDeals.Core.csproj" />
+	  <ProjectReference Include="..\SlackDeals.Plugins.InMemoryDataStore\SlackDeals.Plugins.InMemoryDataStore.csproj" />
+	  <ProjectReference Include="..\SlackDeals.UseCases\SlackDeals.UseCases.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

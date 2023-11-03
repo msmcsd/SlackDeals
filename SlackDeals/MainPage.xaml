@@ -2,46 +2,51 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:SlackDeals.Controls"
-             x:Class="SlackDeals.MainPage">
-    <VerticalStackLayout BackgroundColor="LightGray">
-        <controls:DealCard Margin="10"/>
+             xmlns:vm="clr-namespace:SlackDeals.ViewModels"
+             xmlns:m="clr-namespace:SlackDeals.Core;assembly=SlackDeals.Core"
+             x:DataType="vm:MainPageViewModel"
+             x:Class="SlackDeals.MainPage"
+             BackgroundColor="LightGray">
+
+    <VerticalStackLayout>
+        <!--<ScrollView Orientation="Horizontal">-->
+        <Grid>
+            <CollectionView ItemsSource="{Binding Deals}"
+                            ItemsLayout="HorizontalList">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <controls:DealCard x:DataType="m:Deal" Margin="10"/>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Frame IsVisible="{OnPlatform True, Android=False}"
+                   Padding="0" 
+                   WidthRequest="50" 
+                   HeightRequest="50"
+                   HorizontalOptions="Start"
+                   VerticalOptions="Center"
+                   CornerRadius="25">
+            <Button Text="&lt;"
+                    FontSize="20"
+                    FontAttributes="Bold"
+                    TextColor="Black"
+                    BackgroundColor="White"/>
+            </Frame>
+            <Frame IsVisible="{OnPlatform True, Android=False}"
+                   Padding="0" 
+                   WidthRequest="50" 
+                   HeightRequest="50"
+                   HorizontalOptions="End"
+                   VerticalOptions="Center"
+                   CornerRadius="25">
+            <Button Text=">"
+                    FontSize="20"
+                    FontAttributes="Bold"
+                    TextColor="Black"
+                    BackgroundColor="White"/>
+            </Frame>
+        </Grid>
+        <!--</ScrollView>-->
     </VerticalStackLayout>
-    <!--<ScrollView>
-        <VerticalStackLayout
-            Spacing="25"
-            Padding="30,0"
-            VerticalOptions="Center">
-
-            <Grid>
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
-                <Label Text="kfkkf" />
-
-            </Grid>
-            <Label
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
-
-            <Label
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
-
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
-
-        </VerticalStackLayout>
-    </ScrollView>-->
 
 </ContentPage>

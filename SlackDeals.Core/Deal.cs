@@ -23,8 +23,8 @@ namespace SlackDeals.Core
         [BsonElement("orig_price")]
         public double OriginalPrice { get; set; }
 
-        [BsonElement("shipping")]
-        public float Shipping { get; set; }
+        [BsonElement("condition")]
+        public string Condition { get; set; }
 
         [BsonElement("merchant")]
         public string Merchant { get; set; }

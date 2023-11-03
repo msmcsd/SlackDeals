@@ -1,4 +1,9 @@
 ﻿using Microsoft.Extensions.Logging;
+using SlackDeals.UseCases.Interfaces;
+using SlackDeals.UseCases.PluginInterfaces;
+using SlackDeals.UseCases.UseCases;
+using SlackDeals.ViewModels;
+using SlackDeals.Plugins.InMemoryDataStore;
 
 namespace SlackDeals
 {
@@ -18,6 +23,12 @@ namespace SlackDeals
 #if DEBUG
 		builder.Logging.AddDebug();
 #endif
+
+            builder.Services.AddTransient<IDataStore, InMemoryDataStore>();
+            builder.Services.AddTransient<IViewDeals, ViewDeals>();
+
+            builder.Services.AddTransient<MainPageViewModel>();
+            builder.Services.AddTransient<MainPage>();
 
             return builder.Build();
         }
