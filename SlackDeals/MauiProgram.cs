@@ -3,7 +3,8 @@ using SlackDeals.UseCases.Interfaces;
 using SlackDeals.UseCases.PluginInterfaces;
 using SlackDeals.UseCases.UseCases;
 using SlackDeals.ViewModels;
-using SlackDeals.Plugins.InMemoryDataStore;
+using SlackDeals.Plugins.DataStore.InMemory;
+using SlackDeals.Plugins.DataStore.WebApi;
 
 namespace SlackDeals
 {
@@ -25,6 +26,7 @@ namespace SlackDeals
 #endif
 
             builder.Services.AddTransient<IDataStore, InMemoryDataStore>();
+            //builder.Services.AddTransient<IDataStore, WebApiDataStore>();
             builder.Services.AddTransient<IViewDeals, ViewDeals>();
 
             builder.Services.AddTransient<MainPageViewModel>();

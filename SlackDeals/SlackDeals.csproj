@@ -55,8 +55,9 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\SlackDeals.Core\SlackDeals.Core.csproj" />
-	  <ProjectReference Include="..\SlackDeals.Plugins.InMemoryDataStore\SlackDeals.Plugins.InMemoryDataStore.csproj" />
+	  <ProjectReference Include="..\SlackDeals.Plugins.InMemoryDataStore\SlackDeals.Plugins.DataStore.InMemory.csproj" />
 	  <ProjectReference Include="..\SlackDeals.UseCases\SlackDeals.UseCases.csproj" />
+	  <ProjectReference Include="..\SlackDeals.WebApiDataStore\SlackDeals.Plugins.DataStore.WebApi.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

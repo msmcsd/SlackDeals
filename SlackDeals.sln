@@ -11,9 +11,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MongoDBConnectionTest", "Mo
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{751C4AF6-82AF-4191-AB1F-79876CB4326D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlackDeals.UseCases", "SlackDeals.UseCases\SlackDeals.UseCases.csproj", "{B9012534-7F8E-45F2-9507-C59FE79294B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SlackDeals.UseCases", "SlackDeals.UseCases\SlackDeals.UseCases.csproj", "{B9012534-7F8E-45F2-9507-C59FE79294B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlackDeals.Plugins.InMemoryDataStore", "SlackDeals.Plugins.InMemoryDataStore\SlackDeals.Plugins.InMemoryDataStore.csproj", "{61D31788-6EED-45DC-A5A0-D4C821585E77}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SlackDeals.Plugins.DataStore.InMemory", "SlackDeals.Plugins.InMemoryDataStore\SlackDeals.Plugins.DataStore.InMemory.csproj", "{61D31788-6EED-45DC-A5A0-D4C821585E77}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SlackDeals.WebApi", "SlackDeals.WebApi\SlackDeals.WebApi.csproj", "{E2F1ED46-985E-4737-8A5B-2C1F3B179EEB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SlackDeals.Plugins.DataStore.WebApi", "SlackDeals.WebApiDataStore\SlackDeals.Plugins.DataStore.WebApi.csproj", "{2F4A194E-A56C-4997-9FE8-4B82F7A92EBE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,12 +47,21 @@ Global
 		{61D31788-6EED-45DC-A5A0-D4C821585E77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61D31788-6EED-45DC-A5A0-D4C821585E77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61D31788-6EED-45DC-A5A0-D4C821585E77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2F1ED46-985E-4737-8A5B-2C1F3B179EEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2F1ED46-985E-4737-8A5B-2C1F3B179EEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2F1ED46-985E-4737-8A5B-2C1F3B179EEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2F1ED46-985E-4737-8A5B-2C1F3B179EEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F4A194E-A56C-4997-9FE8-4B82F7A92EBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F4A194E-A56C-4997-9FE8-4B82F7A92EBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F4A194E-A56C-4997-9FE8-4B82F7A92EBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F4A194E-A56C-4997-9FE8-4B82F7A92EBE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{61D31788-6EED-45DC-A5A0-D4C821585E77} = {751C4AF6-82AF-4191-AB1F-79876CB4326D}
+		{2F4A194E-A56C-4997-9FE8-4B82F7A92EBE} = {751C4AF6-82AF-4191-AB1F-79876CB4326D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C0CC763A-59E1-4055-9D33-66838A827CF9}

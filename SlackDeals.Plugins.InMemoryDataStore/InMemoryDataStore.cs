@@ -1,7 +1,7 @@
 ﻿using SlackDeals.Core;
 using SlackDeals.UseCases.PluginInterfaces;
 
-namespace SlackDeals.Plugins.InMemoryDataStore
+namespace SlackDeals.Plugins.DataStore.InMemory
 {
     // All the code in this file is included in all platforms.
     public class InMemoryDataStore : IDataStore
