@@ -2,10 +2,12 @@
 using SlackDeals.UseCases;
 using SlackDeals.UseCases.Interfaces;
 using System.Collections.ObjectModel;
+using CommunityToolkit.Mvvm;
+using CommunityToolkit.Mvvm.Input;
 
 namespace SlackDeals.ViewModels
 {
-    public class MainPageViewModel : BaseViewModel
+    public partial class MainPageViewModel : BaseViewModel
     {
         private readonly IViewDeals _viewDeals;
 
@@ -15,18 +17,29 @@ namespace SlackDeals.ViewModels
         {
             _viewDeals = viewDeals;
         }
+
+        [RelayCommand]
         public async Task LoadDeals()
         {
+            IsBusy = true;
+
             if (Deals.Count != 0) 
             { 
                 Deals.Clear();
             }
 
-            var deals = await _viewDeals.ExecuteAsync();
-
-            foreach(var deal in deals)
+            try
             {
-                Deals.Add(deal);
+                var deals = await _viewDeals.ExecuteAsync();
+
+                foreach (var deal in deals)
+                {
+                    Deals.Add(deal);
+                }
+            }
+            finally
+            {
+                IsBusy = false;
             }
         }
     }
