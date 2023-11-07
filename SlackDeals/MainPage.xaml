@@ -10,7 +10,7 @@
     <ScrollView>
         <VerticalStackLayout>
             <Label Text="Top Picks" FontSize="15" FontAttributes="Bold" Margin="10,30,0,0"/>
-            <Grid RowDefinitions="300">
+            <Grid>
                 <CollectionView ItemsSource="{Binding Deals}" ItemsLayout="HorizontalList">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
@@ -18,7 +18,7 @@
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
-                <Frame IsVisible="{OnPlatform True, Android=False}"
+                <Frame IsVisible="{OnPlatform False, WinUI=True}"
                        Padding="0" 
                        WidthRequest="50" 
                        HeightRequest="50"

@@ -8,9 +8,8 @@
 
     <Grid ColumnDefinitions="Auto, *" Padding="0,5,0,2">
         <!--Deal Image-->
-        <Frame Margin="5,0,5,0" CornerRadius="5" WidthRequest="100" HeightRequest="100" VerticalOptions="Start">
-            <Image Grid.Row="1" 
-                   BackgroundColor="#EEEEEE"
+        <Frame Margin="5,0,5,0" Padding="0" CornerRadius="5" WidthRequest="100" HeightRequest="100" VerticalOptions="Start">
+            <Image BackgroundColor="#EEEEEE"
                    Source="{Binding DealImageUrl}" 
                    WidthRequest="100"
                    HeightRequest="100"
